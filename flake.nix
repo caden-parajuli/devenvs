@@ -1,15 +1,22 @@
 {
-  description = "Ready-made templates for easily creating flake-driven environments";
-
-  outputs = { self }: {
-    templates.java = {
-      path = ./java;
-      description = "Java environment template";
-      welcomeText = ''
-        # Java environment template
-      '';
+  description = "Templates creating development environments";
+  outputs = { self }:
+    {
+      templates = {
+        java = {
+          path = ./java;
+          description = "Java environment template";
+          welcomeText = ''
+            # Java development environment
+          '';
+        };
+        default = {
+          path = ./default;
+          description = "Starter devenv template";
+          welcomeText = ''
+            # Template development environment
+          '';
+        };
+      };
     };
-
-    templates.default = self.templates.java;
-  };
 }
