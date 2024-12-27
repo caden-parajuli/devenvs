@@ -1,5 +1,5 @@
 {
-  description = "Development environment template";
+  description = "An OCaml development environment";
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -15,13 +15,14 @@
       with pkgs;
       {
         devShell = mkShell rec {
-          nativeBuildInputs = [
-          ];
+          nativeBuildInputs = [ ];
           buildInputs = [
+            ocaml
+            opam
+            dune_3
           ];
           LD_LIBRARY_PATH = lib.makeLibraryPath buildInputs;
         };
       }
     );
 }
-

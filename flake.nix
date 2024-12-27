@@ -10,11 +10,18 @@
             # Java development environment
           '';
         };
+        ocaml = {
+          path = ./ocaml;
+          description = "OCaml environment template";
+          welcomeText = ''
+            # OCaml development environment
+          '';
+        };
         default = {
           path = ./default;
           description = "Starter devenv template";
           welcomeText = ''
-            # Template development environment
+            # Development environment template
           '';
         };
       };
